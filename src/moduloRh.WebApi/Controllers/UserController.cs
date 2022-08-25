@@ -5,17 +5,17 @@ namespace moduloRh.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ExemploController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly IExemploService _exemploService;
+        private readonly IUserService _exemploService;
 
-        public ExemploController(IExemploService exemploService)
+        public UserController(IUserService exemploService)
         {
             _exemploService = exemploService;
         }
 
         [HttpGet("[action]")]
-        public ObjectResult ListarTextos()
+        public ObjectResult Listar()
         {
             return Ok(_exemploService.ListarUsuarios());
         }

@@ -2,7 +2,7 @@
 
 namespace moduloRh.Infra.Data.Interface
 {
-    public interface IExemploRepository
+    public interface IUserRepository
     {
         List<UserModel> ListarUsuarios();
     }

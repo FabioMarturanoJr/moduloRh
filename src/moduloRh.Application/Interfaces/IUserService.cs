@@ -2,7 +2,7 @@
 
 namespace moduloRh.Application.Interfaces
 {
-    public interface IExemploService
+    public interface IUserService
     {
         List<UserDto> ListarUsuarios();
     }

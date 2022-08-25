@@ -17,11 +17,11 @@ namespace moduloRh.Infrastructure.IoC
             services.AddAutoMapping();
 
             #region Repositorios
-            services.AddScoped<IExemploRepository, ExemploRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             #endregion
 
             #region Services
-            services.AddScoped<IExemploService, ExemploService>();
+            services.AddScoped<IUserService, UserService>();
             #endregion
 
             #region Contextos

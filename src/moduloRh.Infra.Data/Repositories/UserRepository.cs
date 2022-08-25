@@ -4,11 +4,11 @@ using moduloRh.Infra.Data.Interface;
 
 namespace moduloRh.Infra.Data.Repositories
 {
-    public class ExemploRepository : IExemploRepository
+    public class UserRepository : IUserRepository
     {
         private readonly RhContext _context;
 
-        public ExemploRepository(RhContext context)
+        public UserRepository(RhContext context)
         {
             _context = context;
         }

@@ -5,12 +5,12 @@ using moduloRh.Infra.Data.Interface;
 
 namespace moduloRh.Application.Services
 {
-    public class ExemploService : IExemploService
+    public class UserService : IUserService
     {
-        private readonly IExemploRepository _exemploRepository;
+        private readonly IUserRepository _exemploRepository;
         private readonly IMapper _mapper;
 
-        public ExemploService(IExemploRepository exemploRepository, IMapper mapper)
+        public UserService(IUserRepository exemploRepository, IMapper mapper)
         {
             _exemploRepository = exemploRepository;
             _mapper = mapper;
