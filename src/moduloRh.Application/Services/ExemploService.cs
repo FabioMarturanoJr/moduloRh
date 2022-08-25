@@ -1,4 +1,6 @@
-﻿using moduloRh.Application.Interfaces;
+﻿using AutoMapper;
+using moduloRh.Application.Interfaces;
+using moduloRh.Domain.Dto;
 using moduloRh.Infra.Data.Interface;
 
 namespace moduloRh.Application.Services
@@ -6,15 +8,18 @@ namespace moduloRh.Application.Services
     public class ExemploService : IExemploService
     {
         private readonly IExemploRepository _exemploRepository;
+        private readonly IMapper _mapper;
 
-        public ExemploService(IExemploRepository exemploRepository)
+        public ExemploService(IExemploRepository exemploRepository, IMapper mapper)
         {
             _exemploRepository = exemploRepository;
+            _mapper = mapper;
         }
 
-        public List<string> ListarTextos()
+        public List<UserDto> ListarUsuarios()
         {
-            return _exemploRepository.ListarTextos();
+            var usuarios = _exemploRepository.ListarUsuarios();
+            return _mapper.Map<List<UserDto>>(usuarios);
         }
     }
 }

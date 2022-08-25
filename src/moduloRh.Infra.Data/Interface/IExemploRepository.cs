@@ -1,7 +1,9 @@
-﻿namespace moduloRh.Infra.Data.Interface
+﻿using moduloRh.Domain.Model;
+
+namespace moduloRh.Infra.Data.Interface
 {
     public interface IExemploRepository
     {
-        List<string> ListarTextos();
+        List<UserModel> ListarUsuarios();
     }
 }

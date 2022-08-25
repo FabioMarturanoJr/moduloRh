@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using moduloRh.Domain.Dto;
+using moduloRh.Domain.Model;
 
 namespace moduloRh.AutoMapping
 {
@@ -6,7 +8,7 @@ namespace moduloRh.AutoMapping
     {
         public AutoMapperConfig()
         {
-            //CreateMap<Usuarios, UsersResponseDto>().ReverseMap();
+            CreateMap<UserModel, UserDto>().ReverseMap();
         }
     }
 }

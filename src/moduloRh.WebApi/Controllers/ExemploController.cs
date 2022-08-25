@@ -17,7 +17,7 @@ namespace moduloRh.WebApi.Controllers
         [HttpGet("[action]")]
         public ObjectResult ListarTextos()
         {
-            return Ok(_exemploService.ListarTextos());
+            return Ok(_exemploService.ListarUsuarios());
         }
     }
 }

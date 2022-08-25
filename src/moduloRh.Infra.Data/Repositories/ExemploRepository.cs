@@ -1,4 +1,5 @@
-﻿using moduloRh.Infra.Data.Context;
+﻿using moduloRh.Domain.Model;
+using moduloRh.Infra.Data.Context;
 using moduloRh.Infra.Data.Interface;
 
 namespace moduloRh.Infra.Data.Repositories
@@ -12,12 +13,11 @@ namespace moduloRh.Infra.Data.Repositories
             _context = context;
         }
 
-        public List<string> ListarTextos()
+        public List<UserModel> ListarUsuarios()
         {
             var usuarios = _context.User.ToList();
 
-            var lista = new List<string> { "Texto1", "Texto1" };
-            return lista;
+            return usuarios;
         }
     }
 }

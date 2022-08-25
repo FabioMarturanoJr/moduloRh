@@ -1,7 +1,9 @@
-﻿namespace moduloRh.Application.Interfaces
+﻿using moduloRh.Domain.Dto;
+
+namespace moduloRh.Application.Interfaces
 {
     public interface IExemploService
     {
-        List<string> ListarTextos();
+        List<UserDto> ListarUsuarios();
     }
 }
