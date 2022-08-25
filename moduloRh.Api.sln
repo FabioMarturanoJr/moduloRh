@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloRh.WebApi", "src\moduloRh.WebApi\moduloRh.WebApi.csproj", "{B964A1A9-B88D-4B49-875F-2C855A1984D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moduloRh.WebApi", "src\moduloRh.WebApi\moduloRh.WebApi.csproj", "{B964A1A9-B88D-4B49-875F-2C855A1984D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloRh.Application", "src\moduloRh.Application\moduloRh.Application.csproj", "{49B3C893-CBBB-408C-887B-18DA790BB38A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moduloRh.Application", "src\moduloRh.Application\moduloRh.Application.csproj", "{49B3C893-CBBB-408C-887B-18DA790BB38A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloRh.Infra.Data", "src\moduloRh.Infra.Data\moduloRh.Infra.Data.csproj", "{B2176C5B-8736-471F-9FDD-D8E9047B661F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moduloRh.Infra.Data", "src\moduloRh.Infra.Data\moduloRh.Infra.Data.csproj", "{B2176C5B-8736-471F-9FDD-D8E9047B661F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloRh.Infrastructure.IoC", "src\moduloRh.Infrastructure.IoC\moduloRh.Infrastructure.IoC.csproj", "{CB6CBFD1-CE29-42AC-82F2-56C340B0C61B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moduloRh.Infrastructure.IoC", "src\moduloRh.Infrastructure.IoC\moduloRh.Infrastructure.IoC.csproj", "{CB6CBFD1-CE29-42AC-82F2-56C340B0C61B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloRh.AutoMapping", "src\moduloRh.AutoMapping\moduloRh.AutoMapping.csproj", "{BA16C038-B66E-43F4-88EE-7D3790E143B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moduloRh.AutoMapping", "src\moduloRh.AutoMapping\moduloRh.AutoMapping.csproj", "{BA16C038-B66E-43F4-88EE-7D3790E143B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloRh.Domain", "src\moduloRh.Domain\moduloRh.Domain.csproj", "{12407553-95F1-4FD7-87AD-0B520ADEDA39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BA16C038-B66E-43F4-88EE-7D3790E143B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA16C038-B66E-43F4-88EE-7D3790E143B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA16C038-B66E-43F4-88EE-7D3790E143B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12407553-95F1-4FD7-87AD-0B520ADEDA39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12407553-95F1-4FD7-87AD-0B520ADEDA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12407553-95F1-4FD7-87AD-0B520ADEDA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12407553-95F1-4FD7-87AD-0B520ADEDA39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

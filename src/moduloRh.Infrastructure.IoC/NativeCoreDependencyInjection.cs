@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using moduloRh.Application.Interfaces;
 using moduloRh.Application.Services;
@@ -23,11 +24,12 @@ namespace moduloRh.Infrastructure.IoC
             services.AddScoped<IExemploService, ExemploService>();
             #endregion
 
-
             #region Contextos
-            services.AddScoped<DbContext>();
-            #endregion
+            //services.AddScoped<RhContext>();
 
+            services.AddDbContext<RhContext>(op =>
+                op.UseNpgsql(configuration["ConnectionStrings:ConnectionString"]));
+            #endregion
         }
     }
 }

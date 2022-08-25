@@ -27,7 +27,7 @@ namespace moduloRh.WebApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ConsultaLogs.Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "moduloRh.Api", Version = "v1" });
             });
         }
 
@@ -38,7 +38,7 @@ namespace moduloRh.WebApi
                 Console.WriteLine(env);
             }
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ConsultaLogs.Api v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "moduloRh.Api v1"));
 
             app.UseAuthentication();
             app.UseAuthorization();
