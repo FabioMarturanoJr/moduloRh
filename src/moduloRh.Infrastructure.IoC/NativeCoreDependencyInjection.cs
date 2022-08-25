@@ -25,8 +25,6 @@ namespace moduloRh.Infrastructure.IoC
             #endregion
 
             #region Contextos
-            //services.AddScoped<RhContext>();
-
             services.AddDbContext<RhContext>(op =>
                 op.UseNpgsql(configuration["ConnectionStrings:ConnectionString"]));
             #endregion
