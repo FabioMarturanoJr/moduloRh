@@ -33,7 +33,6 @@ namespace moduloRh.Application.Services
             });
         }
 
-        // https://social.msdn.microsoft.com/Forums/en-US/c9252dc9-25da-4d30-9757-77225355de84/how-to-download-multiple-folders-in-one-zip-file-through-web-api?forum=aspmvc
         public (string fileType, byte[] archiveData, string archiveName) DownloadFiles(Guid userId)
         {
             var zipName = $"archive-{DateTime.Now.ToString("dd_MM_yyyy-HH_mm_ss")}.zip";
@@ -46,12 +45,7 @@ namespace moduloRh.Application.Services
                 {
                     files.ForEach(file =>
                     {
-                        var theFile = archive.CreateEntry(Path.GetFileName(file));
-                        using (var streamWriter = new StreamWriter(theFile.Open()))
-                        {
-                            streamWriter.Write(File.ReadAllText(file));
-                        }
-
+                        archive.CreateEntryFromFile(file, Path.GetFileName(file));
                     });
                 }
 
