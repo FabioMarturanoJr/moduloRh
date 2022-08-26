@@ -13,10 +13,14 @@ namespace moduloRh.Application.Services
         {
             _hostingEnvironment = hostingEnvironment;
         }
+
         public void UploadFile(List<IFormFile> files, Guid userId)
         {
             if (userId == Guid.Empty)
                 throw new Exception("User Id Empty");
+
+            if (files.Count <= 0)
+                throw new Exception($"Count files = {files.Count}");
 
             var target = Path.Combine(_hostingEnvironment.ContentRootPath, "Files", userId.ToString());
 
@@ -35,6 +39,9 @@ namespace moduloRh.Application.Services
 
         public (string fileType, byte[] archiveData, string archiveName) DownloadFiles(Guid userId)
         {
+            if (userId == Guid.Empty)
+                throw new Exception("User Id Empty");
+
             var zipName = $"archive-{DateTime.Now.ToString("dd_MM_yyyy-HH_mm_ss")}.zip";
 
             var files = Directory.GetFiles(Path.Combine(_hostingEnvironment.ContentRootPath, "Files", userId.ToString())).ToList();
