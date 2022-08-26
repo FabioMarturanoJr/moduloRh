@@ -60,6 +60,20 @@ namespace moduloRh.Application.Services
             }
         }
         
+        public void DeletFile(Guid userId)
+        {
+            var pathFiles = Path.Combine(_hostingEnvironment.ContentRootPath, "Files");
+
+            var directory = new DirectoryInfo(pathFiles);
+
+            foreach (var dir in directory.GetDirectories())
+            {
+                if (dir.Name == userId.ToString())
+                {
+                    dir.Delete(true);
+                }
+            }
+        }
 
         public string SizeConverter(long bytes)
         {

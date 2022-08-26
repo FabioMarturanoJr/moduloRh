@@ -44,5 +44,20 @@ namespace moduloRh.WebApi.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpDelete("[action]/{userId}")]
+        public IActionResult Delete(Guid userId)
+        {
+            try
+            {
+                _fileService.DeletFile(userId);
+
+                return Ok("Arquivos apagados");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
