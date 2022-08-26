@@ -10,6 +10,7 @@ namespace moduloRh.Infra.Data.Context
         public RhContext(DbContextOptions options) : base(options)
         { }
 
+
         public DbSet<UserModel> User { get; set; }
 
         internal void ValidateChangeTracker<T>(T dataToUpdate) where T : class
