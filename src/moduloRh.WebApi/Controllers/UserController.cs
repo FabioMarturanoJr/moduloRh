@@ -14,7 +14,7 @@ namespace moduloRh.WebApi.Controllers
             _exemploService = exemploService;
         }
 
-        [HttpGet("[action]")]
+        [HttpGet]
         public ObjectResult Listar()
         {
             return Ok(_exemploService.ListarUsuarios());

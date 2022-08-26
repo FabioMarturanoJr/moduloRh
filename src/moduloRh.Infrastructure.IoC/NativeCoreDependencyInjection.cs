@@ -22,6 +22,7 @@ namespace moduloRh.Infrastructure.IoC
 
             #region Services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IFileService, FileService>();
             #endregion
 
             #region Contextos
