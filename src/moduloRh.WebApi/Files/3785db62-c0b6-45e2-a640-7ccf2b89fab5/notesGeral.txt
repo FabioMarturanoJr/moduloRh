@@ -1,2 +1,0 @@
-git config user.name "Fabio Marturano"
-git config user.email fabio.marturano@meta.com.br
