@@ -1,4 +1,6 @@
-﻿using moduloRh.Domain.Model;
+﻿using AutoMapper;
+using moduloRh.Domain.Dto;
+using moduloRh.Domain.Model;
 using moduloRh.Infra.Data.Context;
 using moduloRh.Infra.Data.Interface;
 
@@ -7,10 +9,25 @@ namespace moduloRh.Infra.Data.Repositories
     public class UserRepository : IUserRepository
     {
         private readonly RhContext _context;
+        private readonly IMapper _mapper;
 
-        public UserRepository(RhContext context)
+        public UserRepository(RhContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
+        }
+
+        public void Criar(UserCreateDto user)
+        {
+            var userDb = _mapper.Map<UserModel>(user);
+            _context.User.Add(userDb);
+            _context.SaveChanges();
+        }
+
+        public UserModel GetByEmail(string email)
+        {
+            return _context.User
+                .Where(u => u.Email.Equals(email)).FirstOrDefault();
         }
 
         public List<UserModel> ListarUsuarios()

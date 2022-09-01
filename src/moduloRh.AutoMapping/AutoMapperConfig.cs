@@ -8,7 +8,8 @@ namespace moduloRh.AutoMapping
     {
         public AutoMapperConfig()
         {
-            CreateMap<UserModel, UserDto>().ReverseMap();
+            CreateMap<UserModel, UserListDto>().ReverseMap();
+            CreateMap<UserModel, UserCreateDto>().ReverseMap();
         }
     }
 }

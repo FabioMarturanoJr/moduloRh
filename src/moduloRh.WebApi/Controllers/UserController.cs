@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using moduloRh.Application.Interfaces;
+using moduloRh.Domain.Dto;
+using System.ComponentModel.DataAnnotations;
 
 namespace moduloRh.WebApi.Controllers
 {
@@ -18,6 +20,13 @@ namespace moduloRh.WebApi.Controllers
         public ObjectResult Listar()
         {
             return Ok(_exemploService.ListarUsuarios());
+        }
+
+        [HttpPost]
+        public ObjectResult Criar([FromBody][Required] UserCreateDto user)
+        {
+            _exemploService.Criar(user);
+            return Ok(user);
         }
     }
 }
