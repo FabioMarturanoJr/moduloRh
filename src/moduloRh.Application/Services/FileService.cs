@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using moduloRh.Application.Interfaces;
+using moduloRh.Infra.Data.Interface;
 using System.IO.Compression;
 
 namespace moduloRh.Application.Services
@@ -8,10 +9,12 @@ namespace moduloRh.Application.Services
     public class FileService : IFileService
     {
         private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IUserRepository _userRepository;
 
-        public FileService(IHostingEnvironment hostingEnvironment)
+        public FileService(IHostingEnvironment hostingEnvironment, IUserRepository userRepository)
         {
             _hostingEnvironment = hostingEnvironment;
+            _userRepository = userRepository;
         }
 
         public void UploadFile(List<IFormFile> files, Guid userId)
@@ -21,6 +24,9 @@ namespace moduloRh.Application.Services
 
             if (files.Count <= 0)
                 throw new Exception($"Count files = {files.Count}");
+
+            if (_userRepository.GetByGuid(userId) == null)
+                throw new Exception("User Not Found");
 
             var target = Path.Combine(_hostingEnvironment.ContentRootPath, "Files", userId.ToString());
 
@@ -41,6 +47,9 @@ namespace moduloRh.Application.Services
         {
             if (userId == Guid.Empty)
                 throw new Exception("User Id Empty");
+
+            if (_userRepository.GetByGuid(userId) == null)
+                throw new Exception("User Not Found");
 
             var zipName = $"archive-{DateTime.Now.ToString("dd_MM_yyyy-HH_mm_ss")}.zip";
 

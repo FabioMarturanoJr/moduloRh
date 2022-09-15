@@ -30,6 +30,12 @@ namespace moduloRh.Infra.Data.Repositories
                 .Where(u => u.Email.Equals(email)).FirstOrDefault();
         }
 
+        public UserModel GetByGuid(Guid id)
+        {
+            return _context.User
+                .Where(u => u.Id.Equals(id)).FirstOrDefault();
+        }
+
         public List<UserModel> ListarUsuarios()
         {
             var usuarios = _context.User.ToList();

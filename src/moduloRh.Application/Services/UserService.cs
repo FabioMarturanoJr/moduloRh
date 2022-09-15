@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using moduloRh.Application.Interfaces;
 using moduloRh.Domain.Dto;
-using moduloRh.Domain.Model;
 using moduloRh.Infra.Data.Interface;
 
 namespace moduloRh.Application.Services

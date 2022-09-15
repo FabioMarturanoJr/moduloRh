@@ -7,6 +7,7 @@ namespace moduloRh.Infra.Data.Interface
     {
         List<UserModel> ListarUsuarios();
         UserModel GetByEmail(string email);
+        UserModel GetByGuid(Guid id);
         void Criar(UserCreateDto user);
     }
 }
