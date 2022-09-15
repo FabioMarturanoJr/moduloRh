@@ -9,5 +9,6 @@ namespace moduloRh.Infra.Data.Interface
         UserModel GetByEmail(string email);
         UserModel GetByGuid(Guid id);
         void Criar(UserCreateDto user);
+        void Deletar(UserModel user);
     }
 }

@@ -30,6 +30,20 @@ namespace moduloRh.WebApi.Controllers
             }
         }
 
+        [HttpPost("[action]")]
+        public IActionResult Update([Required] IFormFile file, [Required] Guid userId)
+        {
+            try
+            {
+                _fileService.UpdateFile(file, userId);
+                return Ok($"arquios {file.FileName} atualizado");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpGet("[action]")]
         public IActionResult Download([FromQuery] Guid userId)
         {
@@ -45,7 +59,7 @@ namespace moduloRh.WebApi.Controllers
             }
         }
 
-        [HttpDelete("[action]/{userId}")]
+        [HttpDelete("{userId}")]
         public IActionResult Delete(Guid userId)
         {
             try

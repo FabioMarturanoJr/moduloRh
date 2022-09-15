@@ -26,6 +26,16 @@ namespace moduloRh.Application.Services
             _userRepository.Criar(user);
         }
 
+        public void Deletar(Guid userId)
+        {
+            var userDb = _userRepository.GetByGuid(userId);
+
+            if (userDb is null)
+                throw new Exception("Usuario não encontrado");
+
+            _userRepository.Deletar(userDb);
+        }
+
         public List<UserListDto> ListarUsuarios()
         {
             var usuarios = _userRepository.ListarUsuarios();

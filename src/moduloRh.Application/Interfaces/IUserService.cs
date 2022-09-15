@@ -7,5 +7,6 @@ namespace moduloRh.Application.Interfaces
     {
         List<UserListDto> ListarUsuarios();
         void Criar(UserCreateDto user);
+        void Deletar(Guid userId);
     }
 }

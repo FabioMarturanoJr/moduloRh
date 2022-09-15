@@ -24,6 +24,12 @@ namespace moduloRh.Infra.Data.Repositories
             _context.SaveChanges();
         }
 
+        public void Deletar(UserModel user)
+        {
+            _context.User.Remove(user);
+            _context.SaveChanges();
+        }
+
         public UserModel GetByEmail(string email)
         {
             return _context.User
@@ -39,7 +45,6 @@ namespace moduloRh.Infra.Data.Repositories
         public List<UserModel> ListarUsuarios()
         {
             var usuarios = _context.User.ToList();
-
             return usuarios;
         }
     }

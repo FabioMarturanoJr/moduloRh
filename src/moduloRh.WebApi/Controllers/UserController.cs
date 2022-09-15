@@ -9,24 +9,31 @@ namespace moduloRh.WebApi.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly IUserService _exemploService;
+        private readonly IUserService _userService;
 
-        public UserController(IUserService exemploService)
+        public UserController(IUserService userService)
         {
-            _exemploService = exemploService;
+            _userService = userService;
         }
 
         [HttpGet]
         public ObjectResult Listar()
         {
-            return Ok(_exemploService.ListarUsuarios());
+            return Ok(_userService.ListarUsuarios());
         }
 
         [HttpPost]
         public ObjectResult Criar([FromBody][Required] UserCreateDto user)
         {
-            _exemploService.Criar(user);
+            _userService.Criar(user);
             return Ok(user);
+        }
+
+        [HttpDelete("{userId}")]
+        public ObjectResult Deletar([Required] Guid userId)
+        {
+            _userService.Deletar(userId);
+            return Ok(userId);
         }
     }
 }
