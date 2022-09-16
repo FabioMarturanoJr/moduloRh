@@ -7,7 +7,5 @@ namespace moduloRh.Application.Interfaces
         void UploadFile(List<IFormFile> files, Guid userId);
         (string fileType, byte[] archiveData, string archiveName) DownloadFiles(Guid userId);
         void DeletFile(Guid userId);
-        string SizeConverter(long bytes);
-        void UpdateFile(IFormFile file, Guid userId);
     }
 }

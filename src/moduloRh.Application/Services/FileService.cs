@@ -28,19 +28,29 @@ namespace moduloRh.Application.Services
             if (_userRepository.GetByGuid(userId) == null)
                 throw new Exception("User Not Found");
 
-            var target = Path.Combine(_hostingEnvironment.ContentRootPath, "Files", userId.ToString());
+            var dirPath = Path.Combine(_hostingEnvironment.ContentRootPath, "Files", userId.ToString());
 
-            Directory.CreateDirectory(target);
+            var dir = Directory.CreateDirectory(dirPath);
 
             files.ForEach(async file =>
             {
                 if (file.Length <= 0) return;
-                var filePath = Path.Combine(target, file.FileName);
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await file.CopyToAsync(stream);
-                }
+                await SaveFile(file, dirPath, dir);
             });
+        }
+
+        private static async Task SaveFile(IFormFile file, string target, DirectoryInfo dir)
+        {
+            var fileDir = dir.GetFiles(file.FileName);
+
+            if (fileDir.Length > 0)
+                File.Delete(fileDir.FirstOrDefault().FullName);
+
+            var filePath = Path.Combine(target, file.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
         }
 
         public (string fileType, byte[] archiveData, string archiveName) DownloadFiles(Guid userId)
@@ -83,11 +93,5 @@ namespace moduloRh.Application.Services
                 }
             }
         }
-
-        public string SizeConverter(long bytes)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
