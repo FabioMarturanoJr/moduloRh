@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moduloRh.Infrastructure.IoC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moduloRh.AutoMapping", "src\moduloRh.AutoMapping\moduloRh.AutoMapping.csproj", "{BA16C038-B66E-43F4-88EE-7D3790E143B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloRh.Domain", "src\moduloRh.Domain\moduloRh.Domain.csproj", "{12407553-95F1-4FD7-87AD-0B520ADEDA39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moduloRh.Domain", "src\moduloRh.Domain\moduloRh.Domain.csproj", "{12407553-95F1-4FD7-87AD-0B520ADEDA39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloRh.Core", "moduloRh.Core\moduloRh.Core.csproj", "{6378224B-8993-4CA1-89D1-5C26BE225E0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{12407553-95F1-4FD7-87AD-0B520ADEDA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12407553-95F1-4FD7-87AD-0B520ADEDA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12407553-95F1-4FD7-87AD-0B520ADEDA39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6378224B-8993-4CA1-89D1-5C26BE225E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6378224B-8993-4CA1-89D1-5C26BE225E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6378224B-8993-4CA1-89D1-5C26BE225E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6378224B-8993-4CA1-89D1-5C26BE225E0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

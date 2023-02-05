@@ -42,6 +42,13 @@ namespace moduloRh.Infra.Data.Repositories
                 .Where(u => u.Id.Equals(id)).FirstOrDefault();
         }
 
+        public UserModel Find(UserCreateDto user)
+        {
+            return _context.User
+                .FirstOrDefault(u => u.Email == user.Email
+                    && u.Password == user.Password);
+        }
+
         public List<UserModel> ListarUsuarios()
         {
             var usuarios = _context.User.ToList();

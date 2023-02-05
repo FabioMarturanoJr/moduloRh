@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using moduloRh.Core.Extension;
 using moduloRh.Infrastructure.IoC;
 using moduloRh.WebApi.Configuration;
 
@@ -24,6 +25,7 @@ namespace moduloRh.WebApi
         {
             services.ApiServiceConfig();
             services.AddDependencies(_configuration);
+            services.AddMassTransitExtension(_configuration);
 
             services.AddSwaggerGen(c =>
             {
